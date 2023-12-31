@@ -1,0 +1,238 @@
+/* Reset default margin and padding */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(245, 238, 179); /* Default background color */
+  }
+  
+  nav {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+  }
+  /*
+ a{
+    color: white;
+    text-align: right;
+    font-size: 20px;
+ }
+ */ 
+  
+  nav ul {
+    padding: 20px;
+    list-style: none;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    background-color: #555;
+  }
+  
+  .content {
+    text-align: center;
+    padding: 0;
+    margin-top: 0px;
+  }
+  
+  /* Styles for individual sections */
+  
+  .section1
+  {
+    margin-top: 50px;
+    padding: 50px 0;
+    border-top: 1px solid #ccc;
+    padding-top: 40px;
+
+  }
+  .section1 img
+  {
+    width: 30%;
+    height: 30%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  
+
+
+  .section1 h2{
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+ 
+
+  
+  .section1 p{
+    font-size: 16px;
+    padding-bottom: 10px;
+    line-height: 2.0;
+  }
+
+ 
+  /* Your existing CSS styles */
+
+/* Styling for Section 2 */
+.section2 {
+    margin-top: 50px;
+    padding: 50px 0;
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+    text-align: center;
+    background-color: #eaeaea; /* Background color for Section 2 */
+  }
+  
+  .section2 h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding: 20px 0;
+    
+  }
+  
+  .section2 p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  /* Grid Styles */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Four columns in a single row */
+    grid-gap: 10px; /* Adjust the gap between grid items */
+    justify-content: center; /* Center items horizontally */
+  }
+  
+  .grid-item {
+    background-color: #fff; /* Background color for grid items */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Optional shadow effect */
+  }
+  
+  .grid-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px; /* Space between image and heading */
+  }
+  
+  .grid-item h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  
+  .grid-item a {
+    text-decoration: none;
+    color: #007bff; /* Link color */
+  }
+  
+  
+  
+ 
+  
+  /* Styling specifically for the hero section */
+  .hero_text {
+    text-align: center;
+    padding: 150px 0;
+    /* Add other styles for the hero section if needed */
+  }
+  
+  .hero_text h1 {
+    font-size: 46px;
+    margin-bottom: 100px;
+
+    color: #fff;
+  }
+  
+  /* Specific background image for the hero section */
+  .hero_text {
+    background-image: url('../images/image1.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+  }
+  
+  /* Your existing CSS styles */
+
+/* Footer Styles */
+.footer {
+    background-color: #222;
+    margin-top: 50px;
+    color: #fff;
+    padding: 30px 0;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+    
+  }
+  
+  .footer h3 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .footer-left {
+    flex: 1;
+    margin-right: 30px;
+  }
+  
+  .footer-right {
+    flex: 1;
+  }
+  
+  .footer p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #ccc;
+  }
+  
+  .footer ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer ul li a {
+    text-decoration: none;
+    color: #ccc;
+    transition: color 0.3s ease;
+  }
+  
+  .footer ul li a:hover {
+    color: #fff;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    color: #ccc;
+    font-size: 12px;
+  }
+  
