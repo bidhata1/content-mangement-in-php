@@ -6,10 +6,14 @@
     <link rel= stylesheet href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <link rel= stylesheet href="../css/about.css">
+	<script src="../js/index.js"></script>
     <title>Document</title>
 </head>
 <body>
 <nav>
+<div class="toggle-bar" onclick="toggleMenu()">
+      &#9776; <!-- This is the hamburger icon -->
+    </div>
     <ul>
       <li><a href="index.php">Home</a></li>
       <li><a href="about.php">About Us</a></li>
@@ -25,13 +29,13 @@
 				<img src="../images/image1.jpg" alt="Geeksforgeeks">
 			</div>
 			<div>
-	<p>xyz is a leading platform that provides computer science resources
+			<p>xyz is a leading platform that provides computer science resources
 				and coding challenges for programmers and technology enthusiasts,
 				along with interview and exam preparations for upcoming aspirants.
 				With a strong emphasis on enhancing coding skills and knowledge,
 				it has become a trusted destination for over 12 million plus registered
 				users worldwide.</p>
-				<button href="">Read More...</button>
+				
 			</div>
 		</div>
 	</section>
@@ -56,9 +60,7 @@
 			<!-- Card 2 -->
 			<div class="card">
 				<div class="card-img">
-					<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20230822183347/
-man-portrait-businessman-male.jpg" alt="User 2">
+					<img src="../images/back.jpg" alt="User 2">
 				</div>
 				<div class="card-info">
 					<h2 class="card-name">Dikshya</h2>
@@ -70,9 +72,7 @@ man-portrait-businessman-male.jpg" alt="User 2">
 			<!-- Card 3 -->
 			<div class="card">
 				<div class="card-img">
-					<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20230824122630/
-business-office-business-woman-professional.jpg" alt="User 3">
+					<img src="../images/background.jpeg" alt="User 3">
 				</div>
 				<div class="card-info">
 					<h2 class="card-name">Prasiddhi</h2>

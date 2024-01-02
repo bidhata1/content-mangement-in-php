@@ -1,29 +1,32 @@
+/* Global styles */
+/* ... (unchanged) */
 
+/* Navigation */
+/* ... (unchanged) */
+
+/* Contact Section */
 .container {
-  width: 50%;
+  width: 40%;
   margin: 0 auto;
-}
-
-.contact {
-  padding: 50px 0;
-  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .contact h2 {
-  font-size: 36px;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 40px;
   margin-bottom: 20px;
 }
 
 .contact-form {
   background-color: #fff;
-  padding: 40px;
+  padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .form-group {
-  display: flex;
-  flex-direction: column;
   margin-bottom: 20px;
 }
 
@@ -35,7 +38,7 @@ label {
 input[type="text"],
 input[type="email"],
 textarea {
-  width: 100%;
+  width: calc(100% - 22px);
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ccc;
@@ -58,4 +61,25 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
   background-color: #555;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .container {
+      width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+      width: 100%;
+  }
+
+  .contact h2 {
+      font-size: 20px;
+  }
+
+  textarea {
+      height: 100px;
+  }
 }

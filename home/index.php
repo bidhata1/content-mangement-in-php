@@ -4,16 +4,20 @@
   <meta charset="UTF-8">
   <title>My Website</title>
   <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/index.js"></script>
 </head>
 <body>
 
   <nav>
+  <div class="toggle-bar" onclick="toggleMenu()">
+      &#9776; <!-- This is the hamburger icon -->
+    </div>
     <!--
     <div class="logo">
       <a href="home.php">XYZ Comapany</a>
     </div>
 -->
-    <ul>
+    <ul id="nav-items">
       <li><a href="index.php">Home</a></li>
       <li><a href="about.php">About Us</a></li>
       <li><a href="contact.php">Contact</a></li>
@@ -29,13 +33,14 @@
           </div>  
 -->
       </div>
-      <section class="section1">
-    <div class="content">
+  <section class="section1">
+    <div class="content2">
         <div class="text">
             <h2>Our Motive</h2>
-            <p>This is the first section of the homepage...</p>
-            <p>Welcome to our amazing platform...</p>
-            <p>Join our community today...</p>
+            <p>This is the first section of the homepage.Welcome to our amazing platform.Join our community today...
+            Another way to add images, audio, and videos is by copy-pasting the file URL in the block. Since the media isn’t hosted on your server, it can help reduce the load on your hosting resources.
+            </p>
+            
         </div>
     </div>
     <div class="image">

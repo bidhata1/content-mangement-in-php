@@ -6,10 +6,14 @@
     <link rel= stylesheet href="../css/style.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
     <link rel= stylesheet href="../css/contact.css">
+    <script src="../js/index.js"></script>
     <title>Document</title>
 </head>
 <body>
 <nav>
+<div class="toggle-bar" onclick="toggleMenu()">
+      &#9776; <!-- This is the hamburger icon -->
+    </div>
     <ul>
       <li><a href="index.php">Home</a></li>
       <li><a href="about.php">About Us</a></li>
