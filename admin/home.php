@@ -13,7 +13,7 @@
   <body>
 		
 		  <div class="wrapper d-flex align-items-stretch">
-      <nav id="sidebar">
+          <nav id="sidebar">
             <div class="sidebar-header">
                 <h3>WELCOME</h3>
             </div>
@@ -71,30 +71,19 @@
                       
           </div>
         </nav>
-        
-
-
+    
         <!-- home -->
         <div id="home">
-        <h2 class="mb-4">Motives</h2>
         <div>
-            <!-- Form to update Motive content -->
-            <form action="process_motive.php" id="updateMotiveContent" method="POST" onsubmit="updateContent('motive'); return false;">
-              <label for="motive_heading">Heading:</label><br>
-              <input type="text" id="motive_heading" name="motive_heading"><br><br>
-
-              <label for="motive_paragraph">Enter Paragraph:</label><br>
-            <textarea id="motive_paragraph" name="motive_paragraph" rows="4" cols="50" placeholder="Enter Paragraph"></textarea><br><br>
-
-              <label for="motive_image">Upload Image:</label><br>
-              <input type="file" id="motive_image" name="motive_image"><br><br>
-                <button type="submit">Update Motive</button>
+          <!-- Form to update Home page content -->
+            <form action="process_heading.php" id="updateHomeContent" method="POST" onsubmit="updateContent('home'); return false;"> 
+            <label for="heading">Heading:</label><br>
+            <input type="text" id="heading" name="heading"><br><br>
+            <button type="submit" value="submit">Update Home</button>
             </form>
-        </div>
-
         
-      
-      </div>  
+        </div> 
+        </div>  
 		</div>
     <script>
   // Function to handle showing the submenu when clicking on the main menu item

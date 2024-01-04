@@ -13,7 +13,7 @@
   <body>
 		
 		  <div class="wrapper d-flex align-items-stretch">
-      <nav id="sidebar">
+          <nav id="sidebar">
             <div class="sidebar-header">
                 <h3>WELCOME</h3>
             </div>
@@ -71,28 +71,52 @@
                       
           </div>
         </nav>
+      
+           
+       
         
+        <div id="contact">
+        <h2 class="mb-4">Contact</h2>
+        <?php
+                include_once('../db/connection.php');
+                    try {
+                        $query = "SELECT * FROM contact_details"; // Replace 'your_table' with your actual table name
+                         $statement = $conn->query($query);
 
+                        if ($statement->rowCount() > 0) {
+                            echo "<table border='1'>
+                            <thead>
+                                <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Message</th>
+                                </tr>
+                            </thead>
+                            <tbody>";
 
-        <!-- home -->
-        <div id="home">
-        <h2 class="mb-4">Motives</h2>
-        <div>
-            <!-- Form to update Motive content -->
-            <form action="process_motive.php" id="updateMotiveContent" method="POST" onsubmit="updateContent('motive'); return false;">
-              <label for="motive_heading">Heading:</label><br>
-              <input type="text" id="motive_heading" name="motive_heading"><br><br>
-
-              <label for="motive_paragraph">Enter Paragraph:</label><br>
-            <textarea id="motive_paragraph" name="motive_paragraph" rows="4" cols="50" placeholder="Enter Paragraph"></textarea><br><br>
-
-              <label for="motive_image">Upload Image:</label><br>
-              <input type="file" id="motive_image" name="motive_image"><br><br>
-                <button type="submit">Update Motive</button>
-            </form>
+                                while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+                                echo "<tr>
+                                <td>" . htmlspecialchars($row["id"]) . "</td>
+                                <td>" . htmlspecialchars($row["name"]) . "</td>
+                                <td>" . htmlspecialchars($row["email"]) . "</td>
+                                
+                                <td>" . htmlspecialchars($row["message"]) . "</td>
+                                <td><button href='update.php?id=" . $row["id"] . "'>Update</a></td>
+                                <td><button href='delete.php?id=" . $row["id"] . "'>Delete</a></td>
+                         </tr>";
+                            }
+                            echo "</tbody></table>";
+                } 
+                    else {
+                        echo "No results found";
+                            }
+                }   catch (PDOException $e) {
+                    echo "Error: " . $e->getMessage();
+                    }
+            ?> 
+        
         </div>
-
-        
       
       </div>  
 		</div>

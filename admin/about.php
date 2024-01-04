@@ -13,7 +13,7 @@
   <body>
 		
 		  <div class="wrapper d-flex align-items-stretch">
-      <nav id="sidebar">
+          <nav id="sidebar">
             <div class="sidebar-header">
                 <h3>WELCOME</h3>
             </div>
@@ -74,24 +74,36 @@
         
 
 
-        <!-- home -->
-        <div id="home">
-        <h2 class="mb-4">Motives</h2>
-        <div>
-            <!-- Form to update Motive content -->
-            <form action="process_motive.php" id="updateMotiveContent" method="POST" onsubmit="updateContent('motive'); return false;">
-              <label for="motive_heading">Heading:</label><br>
-              <input type="text" id="motive_heading" name="motive_heading"><br><br>
+        
+        
+        
+           
+        
+          
 
-              <label for="motive_paragraph">Enter Paragraph:</label><br>
-            <textarea id="motive_paragraph" name="motive_paragraph" rows="4" cols="50" placeholder="Enter Paragraph"></textarea><br><br>
+    
 
-              <label for="motive_image">Upload Image:</label><br>
-              <input type="file" id="motive_image" name="motive_image"><br><br>
-                <button type="submit">Update Motive</button>
+        <!-- about -->
+        <div id="about">
+        <h2 class="mb-4">About</h2>
+        <ul class="collapse list-unstyled" id="pageSubmenu">
+        
+            <!-- Form to update About content -->
+            <form action="about_process.php" method="POST" enctype="multipart/form-data" id="updateAboutContent" onsubmit="updateContent('about'); return false;">
+            <label for="imageUpload">Upload Image:</label><br>
+            <input type="file" id="imageUpload" name="imageUpload"><br><br>
+        
+            <label for="paragraphContent">Enter Paragraph:</label><br>
+            <textarea id="paragraphContent" name="paragraphContent" rows="4" cols="50" placeholder="Enter Paragraph"></textarea><br><br>
+          
+                <button type="submit">Update About</button>
             </form>
+        </li>
+        
+    </ul> 
         </div>
 
+        <!-- contact -->
         
       
       </div>  

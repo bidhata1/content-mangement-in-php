@@ -5,6 +5,7 @@
   <title>My Website</title>
   <link rel="stylesheet" href="../css/style.css">
   <script src="../js/index.js"></script>
+  
 </head>
 <body>
 
@@ -17,21 +18,25 @@
       <a href="home.php">XYZ Comapany</a>
     </div>
 -->
+<div class="nav-items-container">
     <ul id="nav-items">
       <li><a href="index.php">Home</a></li>
       <li><a href="about.php">About Us</a></li>
       <li><a href="contact.php">Contact</a></li>
     </ul>
+  </div>
   </nav>
 
   <div class="content">
     <div class="content1">
         <div class="hero_text">
-          <h1>XYZ Company</h1>
+        <div id="particles-js">
+          <h1>Creativity takes courage</h1>
           <!--<div class="image_section">
             <img src="../images/background.jpeg" alt="Hero Image" class="hero">
           </div>  
--->
+--></div>
+        
       </div>
   <section class="section1">
     <div class="content2">
@@ -160,6 +165,7 @@
       <p>&copy; 2023 Mywebsite. All rights reserved | Design By <i><b>Bidhata Pandey</b></i></p>
     </div>
   </footer>
+  <script src="../js/app.js"></script>
 
 </body>
 </html>

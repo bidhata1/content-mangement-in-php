@@ -35,13 +35,16 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol {
   nav ul {
     padding: 20px;
     list-style: none;
-    
     display: none;
   }
   
 
   nav ul.show {
     display: block;
+  }
+  nav ul.show li {
+    display: block;
+    margin-top: 10px 
   }
 }
   
@@ -82,7 +85,7 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol {
   flex-direction: column; /* Adjust for smaller screens */
   align-items: center; /* Center content */
   padding-top: 40px;
-  border-top: 1px solid #ccc;
+  
   padding-bottom: 100px;
   text-align: center;
 }
@@ -132,14 +135,15 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol {
  
   /* Your existing CSS styles */
 
-/* Styling for Section 2 */
+/* Styling for Section 2 
+
 .section2 {
     margin-top: 50px;
     padding: 50px 0;
     border-top: 1px solid #ccc;
     padding-top: 20px;
     text-align: center;
-    background-color: #eaeaea; /* Background color for Section 2 */
+    background-color: #eaeaea; /* Background color for Section 2 
   }
   
   .section2 h2 {
@@ -155,27 +159,27 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol {
     margin-bottom: 20px;
   }
   
-  /* Grid Styles */
+  /* Grid Styles 
   .grid-container {
     padding: 0 30px;
     
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Four columns in a single row */
-    grid-gap: 10px; /* Adjust the gap between grid items */
-    justify-content: center; /* Center items horizontally */
+    grid-template-columns: repeat(3, 1fr); /* Four columns in a single row 
+    grid-gap: 10px; /* Adjust the gap between grid items 
+    justify-content: center; /* Center items horizontally 
   }
   
   .grid-item {
-    background-color: #fff; /* Background color for grid items */
+    background-color: #fff; /* Background color for grid items 
     padding: 10px;
     text-align: center;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Optional shadow effect */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Optional shadow effect 
   }
   
   .grid-item img {
     max-width: 100%;
     height: auto;
-    margin-bottom: 10px; /* Space between image and heading */
+    margin-bottom: 10px; /* Space between image and heading 
   }
   
   .grid-item h3 {
@@ -185,7 +189,43 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol {
   
   .grid-item a {
     text-decoration: none;
-    color: #007bff; /* Link color */
+    color: #007bff; /* Link color 
+  }
+  */
+  .section2 {
+    margin-top: 60px;
+    padding: 40px;
+    text-align: center;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .grid-item {
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .grid-item img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media screen and (max-width: 768px) {
+    .grid-container {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+    }
+    
+    .grid-item {
+      padding: 10px;
+    }
   }
   
   
@@ -208,7 +248,7 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol {
   
   /* Specific background image for the hero section */
   .hero_text {
-    background-image: url('../images/image1.jpg'); /* Replace with your image path */
+    background-image: url('../images/sunset.jpg'); /* Replace with your image path */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

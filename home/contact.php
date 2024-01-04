@@ -14,12 +14,15 @@
 <div class="toggle-bar" onclick="toggleMenu()">
       &#9776; <!-- This is the hamburger icon -->
     </div>
-    <ul>
+    <div class="nav-items-container">
+    <ul id="nav-items">
       <li><a href="index.php">Home</a></li>
       <li><a href="about.php">About Us</a></li>
       <li><a href="contact.php">Contact</a></li>
     </ul>
+  </div>
   </nav>
+
   <section class="contact">
     <div class="container">
       <h2>Contact Us</h2>
