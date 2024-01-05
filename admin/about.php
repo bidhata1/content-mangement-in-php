@@ -71,37 +71,43 @@
                       
           </div>
         </nav>
-        
+      <?php
+        include_once '../db/connection.php';
+        $stmt = $conn->prepare("SELECT * FROM about_page WHERE id=:id");  
+        $stmt->bindParam(':id', $id , PDO::PARAM_INT);
+        $id = 1;
+        $stmt->execute();
 
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        if ($row) {
+          echo '<div class="container-fluid">';
+          echo '<div class="row">';
+          echo '<div class="col-md-6">';
+          echo '<img src="../images/' . $row['imageUpload'] . '" alt="about" width="100%" height="100%" style="border-radius: 0;">';
+          // You might need to remove any 'border-radius' style above if it's set in your CSS
+          echo '</div>';
+          echo '<div class="col-md-6">';
+          echo '<form action="update_about.php" method="POST">';
+          echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
+      
+          echo '<label for="imageUpload">Upload Image:</label><br>';
+          echo '<input type="file" id="imageUpload" name="imageUpload"><br><br>';
+      
+          echo '<label for="paragraphContent">Update Paragraph:</label><br>';
+          echo '<textarea id="paragraphContent" name="paragraphContent" rows="4" cols="50" placeholder="Enter Paragraph">' . $row['paragraphContent'] . '</textarea><br><br>';
+      
+          echo '<button type="submit">Update Content</button>';
+          echo '</form>';
+          echo '</div>';
+          echo '</div>';
+          echo '</div>';
+      } else {
+          echo "No data found";
+      }
+      
 
-        
-        
-        
-           
-        
-          
+        ?>
 
-    
-
-        <!-- about -->
-        <div id="about">
-        <h2 class="mb-4">About</h2>
-        <ul class="collapse list-unstyled" id="pageSubmenu">
-        
-            <!-- Form to update About content -->
-            <form action="about_process.php" method="POST" enctype="multipart/form-data" id="updateAboutContent" onsubmit="updateContent('about'); return false;">
-            <label for="imageUpload">Upload Image:</label><br>
-            <input type="file" id="imageUpload" name="imageUpload"><br><br>
-        
-            <label for="paragraphContent">Enter Paragraph:</label><br>
-            <textarea id="paragraphContent" name="paragraphContent" rows="4" cols="50" placeholder="Enter Paragraph"></textarea><br><br>
-          
-                <button type="submit">Update About</button>
-            </form>
-        </li>
-        
-    </ul> 
-        </div>
 
         <!-- contact -->
         

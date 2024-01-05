@@ -30,28 +30,71 @@
   <div class="content">
     <div class="content1">
         <div class="hero_text">
-        <div id="particles-js">
-          <h1>Creativity takes courage</h1>
+        <?php
+include_once '../db/connection.php';
+
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    // Fetch updated content from the database using prepared statement
+    $id = 1; // Example ID
+    $stmt = $conn->prepare("SELECT * FROM hero_contents WHERE id = :id");
+    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+    $stmt->execute();
+
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    if ($result) {
+     
+        // Display updated content on the frontend
+        echo '<h1>' . $result['heading'] . '</h1>';
+        
+    } else {
+        echo "No results found";
+    }
+} catch(PDOException $e) {
+    echo "Error: " . $e->getMessage();
+}
+?>
+
+        
+          
           <!--<div class="image_section">
             <img src="../images/background.jpeg" alt="Hero Image" class="hero">
           </div>  
---></div>
+          -->
         
       </div>
-  <section class="section1">
+      <section class="section1">
     <div class="content2">
         <div class="text">
-            <h2>Our Motive</h2>
-            <p>This is the first section of the homepage.Welcome to our amazing platform.Join our community today...
-            Another way to add images, audio, and videos is by copy-pasting the file URL in the block. Since the media isn’t hosted on your server, it can help reduce the load on your hosting resources.
-            </p>
+        <?php
+        // Fetch the updated content from the database
+        include_once '../db/connection.php';
+        $stmt = $conn->prepare("SELECT * FROM motive_table WHERE id=:id");
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $id = 1; // Assuming the ID of the content you want to display
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        // Display the fetched content on the HTML page
+        if ($row) {
+            echo '<h2>' . htmlspecialchars($row['motive_heading']) . '</h2>';
+            echo '<p>' . htmlspecialchars($row['motive_paragraph']) . '</p>';
             
+        } else {
+            echo "No data found";
+        }
+        ?>
         </div>
     </div>
     <div class="image">
-        <img src="../images/background.jpeg" alt="Hero Image" class="hero">
+        
+           <img src="../images/background.jpeg" alt="Hero Image" class="hero">
+        
     </div>
 </section>
+
 
 <section class="section2">
   <h2>Our Service</h2>
@@ -165,7 +208,7 @@
       <p>&copy; 2023 Mywebsite. All rights reserved | Design By <i><b>Bidhata Pandey</b></i></p>
     </div>
   </footer>
-  <script src="../js/app.js"></script>
+  
 
 </body>
 </html>

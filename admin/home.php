@@ -71,19 +71,38 @@
                       
           </div>
         </nav>
-    
-        <!-- home -->
-        <div id="home">
-        <div>
-          <!-- Form to update Home page content -->
-            <form action="process_heading.php" id="updateHomeContent" method="POST" onsubmit="updateContent('home'); return false;"> 
-            <label for="heading">Heading:</label><br>
-            <input type="text" id="heading" name="heading"><br><br>
-            <button type="submit" value="submit">Update Home</button>
-            </form>
+        <?php
+// Establishing PDO connection
+include_once '../db/connection.php';
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    // Fetch content from the database
+    $stmt = $conn->prepare("SELECT * FROM hero_contents WHERE id = :id");
+    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+    $id = 1; // Example ID
+    $stmt->execute();
+
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    if ($result) {
+        // Display fetched content in form fields for editing
+        echo '<form action="update_heading.php" method="POST">';
+        echo '<label for="heading">Heading:</label><br>';
+        echo '<input type="text" name="heading" value="' . $result['heading'] . '"><br>';
         
-        </div> 
-        </div>  
+        echo '<input type="hidden" name="id" value="' . $result['id'] . '">';
+        echo '<input type="submit" value="Update">';
+        echo '</form>';
+    } else {
+        echo "No results found";
+    }
+} catch(PDOException $e) {
+    echo "Error: " . $e->getMessage();
+}
+?>
+    
+         
 		</div>
     <script>
   // Function to handle showing the submenu when clicking on the main menu item

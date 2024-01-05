@@ -30,7 +30,7 @@
 		<p style="font-weight: bold"></p>
 		<div class="about-info">
 			<div class="about-img">
-				<img src="../images/image1.jpg" alt="Geeksforgeeks">
+				<img src="../images/image1.jpg" alt="about">
 			</div>
 			<div>
 			<p>xyz is a leading platform that provides computer science resources

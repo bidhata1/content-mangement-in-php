@@ -72,29 +72,39 @@
           </div>
         </nav>
         
+        <?php
+        include_once '../db/connection.php';
+        $stmt=$conn->prepare("SELECT * FROM motive_table WHERE id=:id");
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $id=1;
+        $stmt->execute();
+
+        $row=$stmt->fetch(PDO::FETCH_ASSOC);
+        if($row){
+          echo '<form action="update_motive.php" id="updateMotiveContent" method="POST" enctype="multipart/form-data">
+        <label for="motive_heading">Heading</label><br>
+        <input type="text" id="motive_heading" name="motive_heading" value="'.$row['motive_heading'].'"><br><br>
+        <label for="motive_paragraph">Enter Paragraph:</label><br>
+        <textarea id="motive_paragraph" name="motive_paragraph" rows="4" cols="50" placeholder="Enter Paragraph">'.$row['motive_paragraph'].'</textarea><br><br>
+        <label for="motive_image">Upload Image:</label><br>
+        <input type="file" id="motive_image" name="motive_image"><br><br>
+        <input type="hidden" name="id" value="'.$row['id'].'">
+        <button type="submit">Update Motive</button>
+    </form>';
+        }
+        else{
+          echo "no data found";
+        
+        }
 
 
-        <!-- home -->
-        <div id="home">
-        <h2 class="mb-4">Motives</h2>
-        <div>
-            <!-- Form to update Motive content -->
-            <form action="process_motive.php" id="updateMotiveContent" method="POST" onsubmit="updateContent('motive'); return false;">
-              <label for="motive_heading">Heading:</label><br>
-              <input type="text" id="motive_heading" name="motive_heading"><br><br>
+        
+        ?>
 
-              <label for="motive_paragraph">Enter Paragraph:</label><br>
-            <textarea id="motive_paragraph" name="motive_paragraph" rows="4" cols="50" placeholder="Enter Paragraph"></textarea><br><br>
-
-              <label for="motive_image">Upload Image:</label><br>
-              <input type="file" id="motive_image" name="motive_image"><br><br>
-                <button type="submit">Update Motive</button>
-            </form>
-        </div>
 
         
       
-      </div>  
+      
 		</div>
     <script>
   // Function to handle showing the submenu when clicking on the main menu item
