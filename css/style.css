@@ -25,6 +25,13 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol {
  .toggle-bar {
   display: none;
 }
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #000; /* Change the background color as needed */
+  z-index: -1;
+}
 
 @media screen and (max-width: 768px) {
   .toggle-bar {
@@ -80,7 +87,7 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol {
 /* Styles for individual sections */
 
 .section1 {
-  margin-top: 70px;
+  margin-top: 200px;
   display: flex;
   flex-direction: column; /* Adjust for smaller screens */
   align-items: center; /* Center content */
@@ -248,7 +255,7 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol {
   
   /* Specific background image for the hero section */
   .hero_text {
-    background-image: url('../images/sunset.jpg'); /* Replace with your image path */
+   /* background-image: url('../images/sunset.jpg'); /* Replace with your image path */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

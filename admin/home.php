@@ -90,7 +90,6 @@ try {
         echo '<form action="update_heading.php" method="POST">';
         echo '<label for="heading">Heading:</label><br>';
         echo '<input type="text" name="heading" value="' . $result['heading'] . '"><br>';
-        
         echo '<input type="hidden" name="id" value="' . $result['id'] . '">';
         echo '<input type="submit" value="Update">';
         echo '</form>';

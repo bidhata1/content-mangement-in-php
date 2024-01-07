@@ -6,6 +6,8 @@
   <link rel="stylesheet" href="../css/style.css">
   <script src="../js/index.js"></script>
   
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  
 </head>
 <body>
 
@@ -29,6 +31,7 @@
 
   <div class="content">
     <div class="content1">
+    <div id="particles-js"></div>
         <div class="hero_text">
         <?php
 include_once '../db/connection.php';
@@ -64,6 +67,7 @@ try {
           </div>  
           -->
         
+      </div>
       </div>
       <section class="section1">
     <div class="content2">
@@ -209,6 +213,6 @@ try {
     </div>
   </footer>
   
-
+  <script src="../js/particles.js"></script>
 </body>
 </html>
