@@ -76,11 +76,18 @@
         include_once '../db/connection.php';
         $stmt=$conn->prepare("SELECT * FROM motive_table WHERE id=:id");
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-        $id=1;
+        $id=0;
         $stmt->execute();
 
         $row=$stmt->fetch(PDO::FETCH_ASSOC);
         if($row){
+          echo '<div class="container-fluid">';
+         echo '<div class="row">';
+         echo '<div class="col-md-6">';
+         echo '<img src="../images/' . $row['motive_image'] . '" alt="motive" width="100%" height="100%" style="border-radius: 0;">';
+         // You might need to remove any 'border-radius' style above if it's set in your CSS
+         echo '</div>';
+         echo '<div class="col-md-6">';
           echo '<form action="update_motive.php" id="updateMotiveContent" method="POST" enctype="multipart/form-data">
         <label for="motive_heading">Heading</label><br>
         <input type="text" id="motive_heading" name="motive_heading" value="'.$row['motive_heading'].'"><br><br>
@@ -91,6 +98,10 @@
         <input type="hidden" name="id" value="'.$row['id'].'">
         <button type="submit">Update Motive</button>
     </form>';
+    echo '</form>';
+         echo '</div>';
+         echo '</div>';
+         echo '</div>';
         }
         else{
           echo "no data found";

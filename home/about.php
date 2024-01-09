@@ -45,7 +45,6 @@
             echo '<div class="about-img">';
             echo '<img src="../images/' . $row['imageUpload'] . '" alt="about">';
             echo '</div>';
-            
             echo '<div>';
             echo '<p>' . $row['paragraphContent'] . '</p>';
             echo '</div>';

@@ -74,7 +74,7 @@ try {
         include_once '../db/connection.php';
         $stmt = $conn->prepare("SELECT * FROM motive_table WHERE id=:id");
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-        $id = 1; // Assuming the ID of the content you want to display
+        $id = 0; // Assuming the ID of the content you want to display
         $stmt->execute();
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -90,8 +90,21 @@ try {
         </div>
     </div>
     <div class="image">
-        
-           <img src="../images/background.jpeg" alt="Hero Image" class="hero">
+      <?php
+        // Fetch the updated content from the database
+        include_once '../db/connection.php';
+        $stmt = $conn->prepare("SELECT * FROM motive_table WHERE id=:id");
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $id = 0; // Assuming the ID of the content you want to display
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        if ($row) {
+            echo '<img src="../images/' . $row['motive_image'] . '" alt="motive" width="100%" height="100%" style="border-radius: 0;">';
+            // You might need to remove any 'border-radius' style above if it's set in your CSS
+        } else {
+            echo "No data found";
+        }
+        ?>
         
     </div>
 </section>
