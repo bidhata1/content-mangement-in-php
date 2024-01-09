@@ -111,7 +111,7 @@ $username = $_SESSION["username"];
         <label for="motive_heading">Heading</label><br>
         <input type="text" id="motive_heading" name="motive_heading" value="'.$row['motive_heading'].'"><br><br>
         <label for="motive_paragraph">Enter Paragraph:</label><br>
-        <textarea id="motive_paragraph" name="motive_paragraph" rows="4" cols="50" placeholder="Enter Paragraph">'.$row['motive_paragraph'].'</textarea><br><br>
+        <textarea id="motive_paragraph" name="motive_paragraph" rows="8" cols="100" placeholder="Enter Paragraph">'.$row['motive_paragraph'].'</textarea><br><br>
         <label for="motive_image">Upload Image:</label><br>
         <input type="file" id="motive_image" name="motive_image"><br><br>
         <input type="hidden" name="id" value="'.$row['id'].'">

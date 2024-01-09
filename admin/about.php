@@ -117,7 +117,7 @@ $username = $_SESSION["username"];
          echo '<input type="file" id="imageUpload" name="imageUpload"><br><br>';
        
          echo '<label for="paragraphContent">Update Paragraph:</label><br>';
-         echo '<textarea id="paragraphContent" name="paragraphContent" rows="4" cols="50" placeholder="Enter Paragraph">' . $row['paragraphContent'] . '</textarea><br><br>';
+         echo '<textarea id="paragraphContent" name="paragraphContent" rows="8" cols="10" placeholder="Enter Paragraph">' . $row['paragraphContent'] . '</textarea><br><br>';
        
          echo '<button type="submit">Update Content</button>';
          echo '</form>';

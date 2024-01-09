@@ -89,6 +89,14 @@ $username = $_SESSION["username"];
                       
           </div>
         </nav>
+
+
+        <h2 class="mb-4">Dashboard</h2>
+        <p>Welcome <?php echo $username; ?>!</p>
+        <p>You are logged in as <?php echo $username; ?>.</p>
+        
+        
+
       
 </div>
     
