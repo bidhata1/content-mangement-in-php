@@ -1,3 +1,22 @@
+<?php
+session_start();
+
+// Check if the user is logged in by verifying the session variables
+if (!isset($_SESSION["id"]) || !isset($_SESSION["username"])) {
+    // If session variables are not set, redirect to the login page or perform other actions
+    header("location: login.php"); // Redirect to the login page
+    exit();
+}
+
+// Access the session variables for the logged-in user
+$id = $_SESSION["id"];
+$username = $_SESSION["username"];
+
+// Your dashboard content here
+// Display the user's dashboard, perform actions, etc.
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

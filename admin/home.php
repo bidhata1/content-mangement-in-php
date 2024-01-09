@@ -1,4 +1,21 @@
-<!doctype html>
+<?php
+session_start();
+
+// Check if the user is logged in by verifying the session variables
+if (!isset($_SESSION["id"]) || !isset($_SESSION["username"])) {
+    // If session variables are not set, redirect to the login page or perform other actions
+    header("location: login.php"); // Redirect to the login page
+    exit();
+}
+
+// Access the session variables for the logged-in user
+$id = $_SESSION["id"];
+$username = $_SESSION["username"];
+
+// Your dashboard content here
+// Display the user's dashboard, perform actions, etc.
+?>
+<!Doctype html>
 <html lang="en">
   <head>
   	<title>dashboard</title>
@@ -20,9 +37,9 @@
 
             <ul class="list-unstyled components">
             <img src="../images/logo.jpg" alt="admin" width="100px" height="100px" >
-<li class="active">
-    <a href="dashboard.php" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" id="homeLink">Home</a>
-    <ul class="collapse list-unstyled" id="homeSubmenu">
+            <li class="active">
+              <a href="dashboard.php" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" id="homeLink">Home</a>
+              <ul class="collapse list-unstyled" id="homeSubmenu">
         <li>
             <a href="home.php">Home</a>
         </li>
