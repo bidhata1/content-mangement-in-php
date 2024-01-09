@@ -67,7 +67,6 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol {
   
   .content {
     text-align: center;
-    
     padding: 0;
     margin-top: 0px;
   }
@@ -203,19 +202,21 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol {
     padding: 50px;
     margin-top: 0px;
   }
+
+  
   .section2 {
     margin-top: 60px;
     padding: 40px;
     text-align: center;
   }
   
-  .grid-container {
+  /* .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
     gap: 10px;
     margin-top: 20px;
   }
-  
+   */
   .grid-item {
     border: 1px solid #ccc;
     padding: 20px;
@@ -228,14 +229,12 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol {
   }
   
   /* Media Queries for Responsiveness */
-  @media screen and (max-width: 768px) {
+  @media (max-width: 768px) {
     .grid-container {
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); 
       gap: 10px;
-    }
-    
-    .grid-item {
-      padding: 10px;
+      margin-top: 20px;
     }
   }
   

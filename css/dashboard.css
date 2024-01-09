@@ -5,7 +5,7 @@
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 body {
     font-family: 'Poppins', sans-serif;
-    background: #fafafa;
+    background:lavender;
     margin: 0;
 }
 
@@ -131,8 +131,6 @@ img{
   text-decoration: none;
   color: black;
 }
-
-
 
 #sidebar ul li a:hover {
     

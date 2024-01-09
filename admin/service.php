@@ -28,6 +28,7 @@ $username = $_SESSION["username"];
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/service.css">
   </head>
   <body>
 		
@@ -89,10 +90,10 @@ $username = $_SESSION["username"];
                       
           </div>
         </nav>
-    
-        <div>
+    <div id="service">
+        <div id="add">
           <!-- Form to update Service content -->
-            <form action="process_service.php" method="POST" enctype="multipart/form-data" id="updateServiceContent" onsubmit="updateContent('service'); return false;">
+            <form action="process_service.php" method="POST" enctype="multipart/form-data" id="updateServiceContent">
             <div class="grid-container">
             <div class="grid-item">
                 <label for="imageFile1">Image File:</label><br>
@@ -106,8 +107,19 @@ $username = $_SESSION["username"];
         </div>
         <input type="submit" value="Submit">
             </form>
-
 </div>
+<div id="update">
+<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
+    <input type="hidden" name="id" value="<?php echo isset($id) ? $id : ''; ?>">
+    <label for="updated_heading">Updated Heading:</label><br>
+    <input type="text" id="updated_heading" name="updated_heading" value="<?php echo isset($heading) ? htmlspecialchars($heading) : ''; ?>"><br>
+    <label for="updated_link">Updated Link:</label><br>
+    <input type="text" id="updated_link" name="updated_link" value="<?php echo isset($link) ? htmlspecialchars($link) : ''; ?>"><br>
+    <input type="submit" name="update" value="Update">
+</form>
+</div>
+</div>
+
         <!-- Additional forms for other content -->
    </div>  
 		</div>

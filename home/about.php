@@ -8,7 +8,7 @@
     <link rel= stylesheet href="../css/about.css">
 
 	<script src="../js/index.js"></script>
-    <title>Document</title>
+    <title>about</title>
 </head>
 <body>
 <nav>

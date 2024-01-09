@@ -8,7 +8,7 @@
     <link rel= stylesheet href="../css/about.css">
     <link rel= stylesheet href="../css/blog.css">
 	<script src="../js/index.js"></script>
-    <title>Document</title>
+    <title>Blogs</title>
 </head>
 <body>
 <nav>
@@ -25,18 +25,28 @@
   </div>
 </nav>
 
-<div class="content">
+<div class="blog_content">
 <div class="blog1">
 <h1>Blog 1</h1>
+<div class="blog1-img">
+<img src="../images/1.jpg" alt="blog1">
+</div>
+<div class="blog1-content">
 <p>xyz is a leading platform that provides computer science resources
         and coding challenges for programmers and technology enthusiasts,
         along with interview and exam preparations for upcoming aspirants.
         With a strong emphasis on enhancing coding skills and knowledge,
         it has become a trusted destination for over 12 million plus registered
         users worldwide.</p>
+</div>
+
 </div>
 <div class="blog2">
 <h1>Blog 2</h1>
+<div class="blog2-img">
+<img src="../images/2.jpg" alt="blog2">
+</div>
+<div class="blog2-content">
 <p>xyz is a leading platform that provides computer science resources
         and coding challenges for programmers and technology enthusiasts,
         along with interview and exam preparations for upcoming aspirants.
@@ -44,8 +54,14 @@
         it has become a trusted destination for over 12 million plus registered
         users worldwide.</p>
 </div>
+</div>
+
 <div class="blog3">
 <h1>Blog 3</h1>
+<div class="blog3-img">
+<img src="../images/4.jpg" alt="blog3">
+</div>
+<div class="blog3-content">
 <p>xyz is a leading platform that provides computer science resources
         and coding challenges for programmers and technology enthusiasts,
         along with interview and exam preparations for upcoming aspirants.
@@ -53,6 +69,7 @@
         it has become a trusted destination for over 12 million plus registered
         users worldwide.</p>
 
+</div>
 </div>
 
 

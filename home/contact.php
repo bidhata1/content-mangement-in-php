@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
     <link rel= stylesheet href="../css/contact.css">
     <script src="../js/index.js"></script>
-    <title>Document</title>
+    <title>contact</title>
 </head>
 <body>
 <nav>

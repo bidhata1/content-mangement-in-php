@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>My Website</title>
   <link rel="stylesheet" href="../css/style.css">
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script src="../js/index.js"></script>
   
 </head>
@@ -29,6 +30,7 @@
 
   <div class="content">
     <div class="content1">
+    
         <div class="hero_text">
         <?php
 include_once '../db/connection.php';
@@ -134,6 +136,7 @@ try {
       <a href="#">Link 4</a>
     </div>
   </div>
+  
 </section>
 
 

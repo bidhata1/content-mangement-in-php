@@ -23,7 +23,7 @@ $username = $_SESSION["username"];
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link  href="../css/dashboard.css" rel="stylesheet">
-  <title>Document</title>
+  <title>Dashboard</title>
 </head>
 <body>
   
