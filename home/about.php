@@ -19,31 +19,43 @@
     <ul id="nav-items">
       <li><a href="index.php">Home</a></li>
       <li><a href="about.php">About Us</a></li>
+	  
       <li><a href="contact.php">Contact</a></li>
     </ul>
   </div>
   </nav>
 
-  
-	<section class="about">
-		<h1>About Us</h1>
-		<p style="font-weight: bold"></p>
-		<div class="about-info">
-			<div class="about-img">
-				<img src="../images/image1.jpg" alt="about">
-			</div>
-			<div>
-			<p>xyz is a leading platform that provides computer science resources
-				and coding challenges for programmers and technology enthusiasts,
-				along with interview and exam preparations for upcoming aspirants.
-				With a strong emphasis on enhancing coding skills and knowledge,
-				it has become a trusted destination for over 12 million plus registered
-				users worldwide.</p>
-				
-			</div>
-		</div>
-	</section>
+  <section class="about">
+    <h1>About Us</h1>
+    <p style="font-weight: bold"></p>
 
+    <div class="about-info">
+        <?php
+        // Fetch updated content from the database
+        include_once '../db/connection.php';
+
+        $id = 3; // Assuming you want to display content with ID 3
+        $stmt = $conn->prepare("SELECT * FROM about_page WHERE id=:id");
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($row) {
+            echo '<div class="about-img">';
+            echo '<img src="../images/' . $row['imageUpload'] . '" alt="about">';
+            echo '</div>';
+            
+            echo '<div>';
+            echo '<p>' . $row['paragraphContent'] . '</p>';
+            echo '</div>';
+        } else {
+            echo '<p>No data found</p>';
+        }
+        ?>
+    </div>
+</section>
+  
 	<section class="team">
 		<h1>Meet Our Team</h1>
 		<div class="team-cards">
@@ -51,7 +63,7 @@
 			<!-- Card 1 -->
 			<div class="card">
 				<div class="card-img">
-					<img src="../images/image1.jpg" alt="User 1">
+					<img src="../images/1.jpg" alt="User 1">
 				</div>
 				<div class="card-info">
 					<h2 class="card-name">Bidhata</h2>
@@ -76,7 +88,7 @@
 			<!-- Card 3 -->
 			<div class="card">
 				<div class="card-img">
-					<img src="../images/background.jpeg" alt="User 3">
+					<img src="../images/nature.jpg" alt="User 3">
 				</div>
 				<div class="card-info">
 					<h2 class="card-name">Prasiddhi</h2>
@@ -98,6 +110,7 @@
         <ul>
           <li><a href="home.php">Home</a></li>
           <li><a href="about.php">About Us</a></li>
+		  
           <li><a href="contact">Contact</a></li>
         </ul>
       </div>
@@ -109,8 +122,6 @@
 
 </body>
 
-</html>
-
-    
+</html>   
 </body>
 </html>

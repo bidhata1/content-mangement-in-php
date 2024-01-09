@@ -71,40 +71,42 @@
                       
           </div>
         </nav>
-      <?php
-        include_once '../db/connection.php';
-        $stmt = $conn->prepare("SELECT * FROM about_page WHERE id=:id");  
-        $stmt->bindParam(':id', $id , PDO::PARAM_INT);
-        $id = 1;
-        $stmt->execute();
-
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        if ($row) {
-          echo '<div class="container-fluid">';
-          echo '<div class="row">';
-          echo '<div class="col-md-6">';
-          echo '<img src="../images/' . $row['imageUpload'] . '" alt="about" width="100%" height="100%" style="border-radius: 0;">';
-          // You might need to remove any 'border-radius' style above if it's set in your CSS
-          echo '</div>';
-          echo '<div class="col-md-6">';
-          echo '<form action="update_about.php" method="POST">';
-          echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
       
-          echo '<label for="imageUpload">Upload Image:</label><br>';
-          echo '<input type="file" id="imageUpload" name="imageUpload"><br><br>';
-      
-          echo '<label for="paragraphContent">Update Paragraph:</label><br>';
-          echo '<textarea id="paragraphContent" name="paragraphContent" rows="4" cols="50" placeholder="Enter Paragraph">' . $row['paragraphContent'] . '</textarea><br><br>';
-      
-          echo '<button type="submit">Update Content</button>';
-          echo '</form>';
-          echo '</div>';
-          echo '</div>';
-          echo '</div>';
-      } else {
-          echo "No data found";
-      }
-      
+       <?php
+       // Fetching data from the database to display for editing
+       include_once '../db/connection.php';
+       $stmt = $conn->prepare("SELECT * FROM about_page WHERE id=:id");  
+       $stmt->bindParam(':id', $id , PDO::PARAM_INT);
+       $id = 3; // Assuming you are fetching data for ID 1
+       $stmt->execute();
+       
+       $row = $stmt->fetch(PDO::FETCH_ASSOC);
+       
+       if ($row) {
+         echo '<div class="container-fluid">';
+         echo '<div class="row">';
+         echo '<div class="col-md-6">';
+         echo '<img src="../images/' . $row['imageUpload'] . '" alt="about" width="100%" height="100%" style="border-radius: 0;">';
+         // You might need to remove any 'border-radius' style above if it's set in your CSS
+         echo '</div>';
+         echo '<div class="col-md-6">';
+         echo '<form action="update_about.php" method="POST" enctype="multipart/form-data">';
+         echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
+       
+         echo '<label for="imageUpload">Upload Image:</label><br>';
+         echo '<input type="file" id="imageUpload" name="imageUpload"><br><br>';
+       
+         echo '<label for="paragraphContent">Update Paragraph:</label><br>';
+         echo '<textarea id="paragraphContent" name="paragraphContent" rows="4" cols="50" placeholder="Enter Paragraph">' . $row['paragraphContent'] . '</textarea><br><br>';
+       
+         echo '<button type="submit">Update Content</button>';
+         echo '</form>';
+         echo '</div>';
+         echo '</div>';
+         echo '</div>';
+       } else {
+         echo "No data found";
+       }
 
         ?>
 
