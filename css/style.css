@@ -124,6 +124,7 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol {
     flex: 1; /* Take up available space */
     padding: 0 20px; /* Add some spacing */
     text-align: left; /* Align text to the left */
+    width: 100%;
   }
 
   .section1 .image {
@@ -209,16 +210,16 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol {
     padding: 40px;
     text-align: center;
   }
-  
-  /* .grid-container {
+  /*
+   .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
     gap: 10px;
     margin-top: 20px;
   }
-   */
+ */  
   .grid-item {
-    border: 1px solid #ccc;
+   /* border: 1px solid #ccc;*/
     padding: 20px;
     text-align: center;
   }
@@ -228,15 +229,61 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol {
     height: auto;
   }
   
+
+  /* Common styling for grid 
+.section2 {
+  margin-top: 60px;
+  padding: 40px;
+  text-align: center;
+}
+/*
+
+.grid-item {
+  border: 1px solid #ccc;
+  padding: 20px;
+  text-align: center;
+}
+
+.grid-item img {
+  max-width: 100%;
+  height: auto;
+}
+*/
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+}
   /* Media Queries for Responsiveness */
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px){
     .grid-container {
       display: grid;
-      grid-template-columns: repeat(2, 1fr); 
+      grid-template-columns: repeat(1, 1fr); 
       gap: 10px;
       margin-top: 20px;
     }
+
   }
+
+
+/* Media Queries for Responsiveness 
+@media screen and (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-top: 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 5px;
+    margin-top: 10px;
+  }
+}
+*/
   
   
   
